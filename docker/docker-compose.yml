@@ -1,0 +1,11 @@
+version: '2'
+services:
+  baacloud_app:
+    container_name: "fileserver"
+    build: .
+    ports:
+      - "6000:6000"
+    volumes:
+      - "/var/lib/tftpboot/:/usr/src/app/http_server/file"
+      - "/var/log/file_server.log/:/usr/src/app/http_server/file/http_main.log"
+    entrypoint: ["python","http_main.py"]
