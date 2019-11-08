@@ -11,7 +11,7 @@ import flask
 
 
 
-logger = log.get_logger('http_main', filePath='file/http_main.log')
+logger = log.get_logger('http_main', filePath='log/http_main.log')
 
 base_folder = os.path.dirname(os.path.abspath(__file__))
 static_folder = os.path.join(base_folder, 'file')
@@ -43,4 +43,4 @@ def download_file():
     response.headers["Content-disposition"] = 'attachment; filename={}'.format(filename)
     return  response
 
-app.run(host="0.0.0.0", port=5678)
+app.run(host="0.0.0.0", port=6000)
